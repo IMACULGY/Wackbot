@@ -15,6 +15,16 @@ client.on("message", (message) => {
 	// Ignore the message if the author of the message is another bot.
 	if (message.author.bot) return;
 
+	// function to kick a user using !kick
+	if (msg.content.startsWith('!kick')) {
+		if (msg.mentions.users.size) {
+		  const taggedUser = msg.mentions.users.first();
+		  msg.channel.send(`You wanted to kick: ${taggedUser.username}`);
+		} else {
+		  msg.reply('Please tag a valid user!');
+		}
+	  }
+
 	// Ignore the message if the message does not start with the specified prefix.
 	if (message.content.indexOf(config.prefix) != 0) return;
 
@@ -26,7 +36,8 @@ client.on("message", (message) => {
 		"bada-bing",
 		"creeper",
 		"bruh",
-		"help"
+		"help",
+		"!kick",
 	]
 	// NUMBER OF COMMANDS: 7
 	switch(command) {
