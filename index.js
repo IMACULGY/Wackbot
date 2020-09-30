@@ -52,9 +52,9 @@ client.on("message", (message) => {
 			.setColor("#00eeff")
 			message.channel.send(helpEmbed)
 			break;
-     case "foo":
-            message.channel.send("bar");
-            break;
+		case "foo":
+			message.channel.send("bar");
+			break;
 	}
 });
 
