@@ -20,7 +20,14 @@ client.on("message", (message) => {
     
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
+	
+	let commandArray = [
+		"ping",
+		"bada-bing",
+		"creeper",
+		"bruh",
+		"help"
+	]
     // NUMBER OF COMMANDS: 4
 	switch(command) {
 		case "ping":
@@ -34,6 +41,13 @@ client.on("message", (message) => {
 			break;
 		case "bruh":
 			message.channel.send("bruh moment");
+			break;
+		case "help":
+			let helpEmbed = new Discord.MessageEmbed()
+			.setTitle("WackBot Commands")
+			.setDescription(commandArray.join("\n"))
+			.setColor("#00eeff")
+			message.channel.send(helpEmbed)
 			break;
 	}
 	
