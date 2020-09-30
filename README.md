@@ -54,8 +54,22 @@ When you are done typing your command(s), please also change the counter for tot
 
 ### Submitting the Command to Wackbot
 
+To save your additions, scroll to the bottom of the page and click on "Propose Changes." This will save the edited `index.js` file to your copy of Wackbot only. In order to submit your changes to the official Wackbot, you need to create a **pull request** to merge your fork with Wackbot.
+
+After pressing the green "Propose Changes" button, you will see a screen that looks like this:
+![image](https://user-images.githubusercontent.com/72100791/94735142-45db8b80-0338-11eb-8ecd-38f38b8acfee.png) </br>
+
+GitHub will automatically suggest a pull request (PR) for you after editing Wackbot. Click on "Create Pull Request" on the right-hand side to start drafting a PR. In general, a good PR should be very descriptive of the issue you are fixing or feature you are adding. For Wackbot, all you need to do is title it with the command(s) you added, and describe what they do in the description box. For example, here is a proper PR for the 'bestmovie' command.
+
+![image](https://user-images.githubusercontent.com/72100791/94736284-f8f8b480-0339-11eb-86d8-c77cd4abecfc.png) </br>
+*The PR should have a title and description formatted like this.*
+
+Once you are done, hit "Create pull request" and you are good to go!
+
+You can find your PR in the "Pull requests" tab of the Wackbot repository. This is where you will get notified if your addition got merged or needs work. Congratulations and thanks for contributing to the greatest Discord bot of all time (maybe). 
+
 ## Wackbot Deployment
-Wackbot has yet to be deployed on an official server. This section will be updated if Wackbot is launched anywhere.
+Wackbot has yet to be deployed on an official server. This section will be updated if Wackbot is officially launched.
 
 ## Use Wackbot in your server
 To learn the basics behind Discord bots and how to deploy them, follow the tutorial over at my repository [SuperSimpleBot](https://github.com/IMACULGY/SuperSimpleBot). If you want to use Wackbot, download Wackbot's files instead of SuperSimpleBot's files when the tutorial says to do so.
