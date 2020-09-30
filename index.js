@@ -41,7 +41,10 @@ client.on("message", (message) => {
 			break;
 		case "bruh":
 			message.channel.send("bruh moment");
-			break;
+      break;
+    case "hey":
+			message.channel.send("hey! How can i help you ");
+      break;
 		case "help":
 			let helpEmbed = new Discord.MessageEmbed()
 			.setTitle("WackBot Commands")
