@@ -35,6 +35,9 @@ client.on("message", (message) => {
 		case "bruh":
 			message.channel.send("bruh moment");
 			break;
+	        case "hey":
+			message.channel.send("hey! How can i help you ");
+			break;
 	}
 	
 });
