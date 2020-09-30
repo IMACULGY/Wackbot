@@ -20,26 +20,39 @@ client.on("message", (message) => {
 
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
+	
+	let commandArray = [
+		"ping",
+		"bada-bing",
+		"creeper",
+		"bruh",
+		"help"
+	]
     // NUMBER OF COMMANDS: 4
-    switch (command) {
-        case "ping":
-            message.channel.send("pong!");
-            break;
-        case "bada-bing":
-            message.channel.send("bada-boom");
-            break;
-        case "creeper":
-            message.channel.send("aww man");
-            break;
-        case "bruh":
-            message.channel.send("bruh moment");
-            break;
-        case "foo":
+	switch(command) {
+		case "ping":
+			message.channel.send("pong!");
+			break;
+		case "bada-bing":
+			message.channel.send("bada-boom");
+			break;
+		case "creeper":
+			message.channel.send("aww man");
+			break;
+		case "bruh":
+			message.channel.send("bruh moment");
+			break;
+		case "help":
+			let helpEmbed = new Discord.MessageEmbed()
+			.setTitle("WackBot Commands")
+			.setDescription(commandArray.join("\n"))
+			.setColor("#00eeff")
+			message.channel.send(helpEmbed)
+			break;
+     case "foo":
             message.channel.send("bar");
             break;
-    }
-
+	}
 });
 
 // Log the bot in using the token from https://discordapp.com/developers/applications/me
