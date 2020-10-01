@@ -69,7 +69,7 @@ client.on("message", (message) => {
 			message.channel.send(embed);
 			break;
 		case "boxing":
-			message.channel.send("(=O*_*)=O Q(*_*Q)");
+			message.channel.send("(=O*_*)=O  Q(*_*Q)");
 			break;
 		}
 	//END OF SWITCH STATEMENT
