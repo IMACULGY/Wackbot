@@ -26,7 +26,11 @@ client.on("message", (message) => {
 		"bada-bing",
 		"creeper",
 		"bruh",
-		"help"
+		"hey",
+		"help",
+		"foo",
+		"avatar",
+		"boxing"
 	]
 	// NUMBER OF COMMANDS: 7
 	switch(command) {
@@ -63,6 +67,9 @@ client.on("message", (message) => {
 			.setURL(member.user.displayAvatarURL({ dynamic: true }))
 			.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }));
 			message.channel.send(embed);
+			break;
+		case "boxing":
+			message.channel.send("(=O*_*)=O Q(*_*Q)");
 			break;
 		}
 	//END OF SWITCH STATEMENT
