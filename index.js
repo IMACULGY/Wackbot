@@ -12,60 +12,19 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-	// Ignore the message if the author of the message is another bot.
 	if (message.author.bot) return;
+	let args = message.content.split("  ").slice(1);
+	let command = message.content.split("  ")[0];
+	command = command.slice(config.prefix.length);
 
-	// Ignore the message if the message does not start with the specified prefix.
-	if (message.content.indexOf(config.prefix) != 0) return;
+	try {
+		let commandFile = require(`./commands/${command}.js`);
+		delete require.cache[require.resolve(`./commands/${command}.js`)];
+		return commandFile.run(client, message, args);
+	} catch (err) {
+		console.error("Erro:" + err )
+	}
 
-	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-	const command = args.shift().toLowerCase();
-	
-	let commandArray = [
-		"ping",
-		"bada-bing",
-		"creeper",
-		"bruh",
-		"help"
-	]
-	// NUMBER OF COMMANDS: 7
-	switch(command) {
-		case "ping":
-			message.channel.send("pong!");
-			break;
-		case "bada-bing":
-			message.channel.send("bada-boom");
-			break;
-		case "creeper":
-			message.channel.send("aww man");
-			break;
-		case "bruh":
-			message.channel.send("bruh moment");
-			break;
-		case "hey":
-			message.channel.send("hey! How can i help you ");
-			break;
-		case "help":
-			let helpEmbed = new Discord.MessageEmbed()
-			.setTitle("WackBot Commands")
-			.setDescription(commandArray.join("\n"))
-			.setColor("#00eeff")
-			message.channel.send(helpEmbed)
-			break;
-		case "foo":
-			message.channel.send("bar");
-			break;
-		case "avatar":
-			const member = message.mentions.members.first() || message.member;
-			const embed = new MessageEmbed()
-			.setColor('#00eeff')
-			.setFooter(member.user.tag)
-			.setURL(member.user.displayAvatarURL({ dynamic: true }))
-			.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }));
-			message.channel.send(embed);
-			break;
-		}
-	//END OF SWITCH STATEMENT
 });
 
 // Log the bot in using the token from https://discordapp.com/developers/applications/me
