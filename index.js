@@ -28,34 +28,6 @@ client.on("message", (message) => {
 		"bruh",
 		"help"
 	]
-	// NUMBER OF COMMANDS: 7
-	switch(command) {
-		case "ping":
-			message.channel.send("pong!");
-			break;
-		case "bada-bing":
-			message.channel.send("bada-boom");
-			break;
-		case "creeper":
-			message.channel.send("aww man");
-			break;
-		case "bruh":
-			message.channel.send("bruh moment");
-			break;
-		case "hey":
-			message.channel.send("hey! How can i help you ");
-			break;
-		case "help":
-			let helpEmbed = new Discord.MessageEmbed()
-			.setTitle("WackBot Commands")
-			.setDescription(commandArray.join("\n"))
-			.setColor("#00eeff")
-			message.channel.send(helpEmbed)
-			break;
-		case "foo":
-			message.channel.send("bar");
-			break;
-	}
 	if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
     
@@ -71,6 +43,35 @@ client.on("message", (message) => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+	// NUMBER OF COMMANDS: 7
+	switch(command) {
+		case "ping":
+			message.channel.send("pong!");
+			break;
+		case "bada-bing":
+			message.channel.send("bada-boom");
+			break;
+		case "creeper":
+			message.channel.send("aww man");
+			break;
+		case "bruh":
+			message.channel.send("bruh moment");
+			break;
+		
+		case "help":
+			let helpEmbed = new Discord.MessageEmbed()
+			.setTitle("WackBot Commands")
+			.setDescription(commandArray.join("\n"))
+			.setColor("#00eeff")
+			message.channel.send(helpEmbed)
+			break;
+		case "foo":
+			message.channel.send("bar");
+			break;
+		case "new":
+			message.channel.send("hey! Welcome to our server ");
+			break;	
+	}
 	//END OF SWITCH STATEMENT
 });
 
