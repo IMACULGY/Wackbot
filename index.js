@@ -64,6 +64,9 @@ client.on("message", (message) => {
 			.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }));
 			message.channel.send(embed);
 			break;
+		case "saturdays":
+			message.channel.send("Are for the boys");
+			break;
 		}
 	//END OF SWITCH STATEMENT
 });
