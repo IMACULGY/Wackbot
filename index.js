@@ -26,7 +26,8 @@ client.on("message", (message) => {
 		"bada-bing",
 		"creeper",
 		"bruh",
-		"help"
+		"help",
+		"ban"
 	]
 	// NUMBER OF COMMANDS: 7
 	switch(command) {
@@ -63,6 +64,12 @@ client.on("message", (message) => {
 			.setURL(member.user.displayAvatarURL({ dynamic: true }))
 			.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }));
 			message.channel.send(embed);
+			break;
+		case "ban":
+			const member = message.mentions.members.first();
+			member.ban().then(() => {
+			    message.channel.send(`${member.user.username} was banned from the server!`)
+			});
 			break;
 		}
 	//END OF SWITCH STATEMENT
