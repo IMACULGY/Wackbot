@@ -27,7 +27,12 @@ client.on("message", (message) => {
 		"creeper",
 		"bruh",
 		"help",
-		"ban"
+		"ban",
+		"hey",
+		"help",
+		"foo",
+		"avatar",
+		"boxing"
 	]
 	// NUMBER OF COMMANDS: 7
 	switch(command) {
@@ -70,6 +75,9 @@ client.on("message", (message) => {
 			member.ban().then(() => {
 			    message.channel.send(`${member.user.username} was banned from the server!`)
 			});
+      break;
+		case "boxing":
+			message.channel.send("(=O*_*)=O  Q(*_*Q)");
 			break;
 		}
 	//END OF SWITCH STATEMENT
