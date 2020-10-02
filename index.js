@@ -26,6 +26,8 @@ client.on("message", (message) => {
 		"bada-bing",
 		"creeper",
 		"bruh",
+		"help",
+		"ban",
 		"hey",
 		"help",
 		"foo",
@@ -68,6 +70,12 @@ client.on("message", (message) => {
 			.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }));
 			message.channel.send(embed);
 			break;
+		case "ban":
+			const member = message.mentions.members.first();
+			member.ban().then(() => {
+			    message.channel.send(`${member.user.username} was banned from the server!`)
+			});
+      break;
 		case "boxing":
 			message.channel.send("(=O*_*)=O  Q(*_*Q)");
 			break;
