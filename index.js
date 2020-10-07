@@ -26,7 +26,13 @@ client.on("message", (message) => {
 		"bada-bing",
 		"creeper",
 		"bruh",
-		"help"
+		"help",
+		"ban",
+		"hey",
+		"help",
+		"foo",
+		"avatar",
+		"boxing"
 	]
 	// NUMBER OF COMMANDS: 7
 	switch(command) {
@@ -66,6 +72,15 @@ client.on("message", (message) => {
 			break;
 		case "saturdays":
 			message.channel.send("Are for the boys");
+      break;
+		case "ban":
+			const member = message.mentions.members.first();
+			member.ban().then(() => {
+			    message.channel.send(`${member.user.username} was banned from the server!`)
+			});
+      break;
+		case "boxing":
+			message.channel.send("(=O*_*)=O  Q(*_*Q)");
 			break;
 		}
 	//END OF SWITCH STATEMENT
