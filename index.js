@@ -72,15 +72,18 @@ client.on("message", (message) => {
 			break;
 		case "saturdays":
 			message.channel.send("Are for the boys");
-      break;
+     			break;
 		case "ban":
 			const member = message.mentions.members.first();
 			member.ban().then(() => {
 			    message.channel.send(`${member.user.username} was banned from the server!`)
 			});
-      break;
+      			break;
 		case "boxing":
 			message.channel.send("(=O*_*)=O  Q(*_*Q)");
+			break;
+		case "sabados"
+			message.channel.send("Son para los chicos");
 			break;
 		}
 	//END OF SWITCH STATEMENT
