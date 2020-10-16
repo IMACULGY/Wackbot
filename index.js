@@ -85,6 +85,9 @@ client.on("message", (message) => {
 		case "sabados"
 			message.channel.send("Son para los chicos");
 			break;
+		case "hubert theme song"
+			message.channel.send("No LOL");
+			break;
 		}
 	//END OF SWITCH STATEMENT
 });
